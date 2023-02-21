@@ -1,0 +1,42 @@
+/**
+ * Kurzbeschreibung der Klasse Controlling:
+ * ...
+ * @author (Ihr Name) 
+ * @version (Versions Nummer oder Datum)
+ */
+
+import GLOOP.*;
+public class Controlling
+{
+  GLTastatur keyboard;
+  GLMaus mouse;
+  public Controlling()
+  {  
+    mouse = new GLMaus();
+    keyboard = new GLTastatur();
+  }
+  private void simulation()
+  {
+    while(!keyboard.esc())
+    {
+      if (keyboard.istGedrueckt('w'))
+      {
+        plane1.forth();
+      }
+      if (keyboard.istGedrueckt('s'))
+      {
+        plane1.back();
+      }
+      if (keyboard.istGedrueckt('a'))
+      {
+        plane1.left();
+      }
+      if (keyboard.istGedrueckt('d'))
+      {
+        plane1.right();
+      }
+      Sys.warte(5);
+    }
+    
+  }
+}
